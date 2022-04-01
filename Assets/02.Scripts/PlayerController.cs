@@ -17,13 +17,13 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRb;
     private Animator animator;
     private AudioSource playerAudio;
+    private Rigidbody2D petRb;
 
     private void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
-        petObject = transform.GetChild(0).gameObject;
     }
 
     private void Update()
@@ -42,12 +42,20 @@ public class PlayerController : MonoBehaviour
                 playerAudio.clip = jumpClip;
                 playerAudio.Play();
             }
+
             else if (Input.GetMouseButtonUp(0) && playerRb.velocity.y > 0)
             {
                 playerRb.velocity = playerRb.velocity * 0.5f;
             }
         }
+        
+        int currentScore = GameManager.instance.GetScore();
 
+        if (currentScore >= 1)
+        {
+            petObject.SetActive(true);
+            FeverTime();
+        }
     }
 
     private void Die()
@@ -99,6 +107,5 @@ public class PlayerController : MonoBehaviour
     {
         isFever = true;
         animator.SetBool("Fever", isFever);
-        Debug.Log("test");
     }
 }

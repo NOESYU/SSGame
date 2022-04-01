@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1053139774274868173}
   - component: {fileID: 1053139774274868172}
   - component: {fileID: 1053139774274868171}
+  - component: {fileID: 3622187919900544869}
   m_Layer: 0
   m_Name: star_0
   m_TagString: Star
@@ -113,3 +114,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
+--- !u!114 &3622187919900544869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053139774274868170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a028c195b8e561342bb35c44ff4a057e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  starSpeed: 10

@@ -4,18 +4,11 @@ using UnityEngine;
 
 public class PetController : MonoBehaviour
 {
-    bool isFever = false;
-    private void FeverTime()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        isFever = true;
-    }
-
-    private void Start()
-    {
-       
-    }
-    private void Update()
-    {
- 
+        if(other.tag == "Star" | other.tag == "SuperStar")
+        {
+            Debug.Log("고양이 닿음");
+        }
     }
 }
