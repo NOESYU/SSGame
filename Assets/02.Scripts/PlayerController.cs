@@ -51,10 +51,17 @@ public class PlayerController : MonoBehaviour
         
         int currentScore = GameManager.instance.GetScore();
 
-        if (currentScore >= 1)
+        if (currentScore >= 10)
         {
             petObject.SetActive(true);
             FeverTime();
+        }
+
+        if(currentScore >= 30)
+        {
+            isFever = false;
+            animator.SetBool("Fever", isFever);
+            petObject.SetActive(false);
         }
     }
 
